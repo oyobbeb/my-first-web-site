@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트 연습장</h2>
+    <p id="demo">몇 시 인가요?</p>
+
+    <h1>소수 목록들</h1>
+
+    <div id="result"></div>
+
+    <script>
+        var numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+
+        numbers.isPrime = function(number){ // number가 prime인지 아닌지 판별
+            for(var i=2; i < number; i++){
+                if(number % i ==0){
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        numbers.addAllNumber = function(max_num){
+            for(var i =2; i <= max_num; i++){
+                this.all.push(i)
+            }
+        };
+
+        numbers.calcPrimes = function(){
+            for(var i =0; i < this.all.length; i++){
+                var n = this.all[i];
+                if(this.isPrime(n)) // all넘버에 들어간 수들을 isPrime = function이 true면 prime 배열에 push //
+                {this.prime.push(n);
+                }
+            }
+        }
+
+        numbers.getAllPrimeNumbers = function(){
+            var ret = "";
+            ret += "<h2>전체 소수의 갯수: " + this.prime.length + "</h2>\n";
+            for (var i = 0; i < this.prime.length; i++){
+                ret += (i+1) + "번째 소수: " + this.prime[i] + "<br>\n";
+            }
+            return ret;
+        }
+
+        numbers.addAllNumber(10000);
+        numbers.calcPrimes();
+        document.getElementById('result').innerHTML = numbers.getAllPrimeNumbers();
+
+        // numbers.addPrime = function(number);
+        // numbers.getAllPrimes = function();
+        
+
+
+	//     for ( var i = 1; i <= 1000; i++) {
+	// 	    for (var j = 2; j <= i; j++) {
+	// 		    if ((i % j) == 0)
+	// 			break;
+	// 	    }
+	// 	if (j == i)
+	// 		console.log(i);
+	// }
+
+    </script>
+</body>
+</html>

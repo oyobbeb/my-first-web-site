@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>자바스크립트 연습장</h2>
+    <p id="demo">몇 시 인가요?</p>
+
+    <script>
+
+        // var input1 = prompt("숫자를 입력해주세요")
+        // var input2 = prompt("숫자를 입력해주세요")
+
+        // var n1 = Number(input1);
+        // var n2 = Number(input2);
+
+        // console.log(n1+n2)
+     
+     var isPrime = true;
+     var n = Number(prompt("2이상 입력"));
+     for(var i =2; i< n; i++){
+        if(n % i === 0){
+            isPrime =false;
+            break;
+        }
+     }
+
+     if(isPrime){
+        console.log(`${n}은 소수입니다.`)
+     } else {
+        console.log('소수 ㄴㄴ');
+     }
+
+    </script>
+</body>
+</html>
